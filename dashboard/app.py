@@ -107,6 +107,19 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("*Rohit Jindal · CPS Interview*")
 
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+resume_path = os.path.join(BASE_DIR, "data", "resume.pdf")
+
+print("Looking for:", resume_path)
+
+if os.path.exists(resume_path):
+    with open(resume_path, "rb") as f:
+        pdf_bytes = f.read()
+else:
+    raise FileNotFoundError(resume_path)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE 1 — OVERVIEW
