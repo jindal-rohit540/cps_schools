@@ -1,1 +1,4 @@
 # cps_schools
+
+The dashboard ingests the Kaggle Students Performance dataset — 1,000 students, 8 features. The core engineering decision was avoiding data leakage: we train a pre-exam model using only 5 demographic features — SES, parent education, gender, ethnicity, and test prep status — to predict at-risk students before any score exists. This mirrors how a real Early Warning System works at enrollment. The model hits 0.72 ROC-AUC pre-exam, jumping to 0.99 when we add one math score — which tells the business story: interim assessments dramatically improve risk prediction, so invest in them. The Streamlit dashboard gives counsellors four views: district overview, deep-dive analytics with filters, model evaluation with a live predictor, and key recommendations — all built on top of a clean two-layer sklearn pipeline with proper cross-validation and imbalanced-class handling."
+
